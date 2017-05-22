@@ -1,4 +1,4 @@
-package com.bignerdranch.android.criminalintent;
+package com.bignerdranch.android.criminalintent.Fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +15,10 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+
+import com.bignerdranch.android.criminalintent.R;
+import com.bignerdranch.android.criminalintent.modules.Crime;
+import com.bignerdranch.android.criminalintent.modules.CrimeLab;
 
 import java.util.Date;
 import java.util.UUID;

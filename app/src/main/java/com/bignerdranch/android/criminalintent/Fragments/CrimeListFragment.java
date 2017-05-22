@@ -1,4 +1,4 @@
-package com.bignerdranch.android.criminalintent;
+package com.bignerdranch.android.criminalintent.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
+
+import com.bignerdranch.android.criminalintent.R;
+import com.bignerdranch.android.criminalintent.activitys.CrimePagerActivity;
+import com.bignerdranch.android.criminalintent.modules.Crime;
+import com.bignerdranch.android.criminalintent.modules.CrimeLab;
 
 import java.util.List;
 
