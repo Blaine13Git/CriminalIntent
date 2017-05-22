@@ -15,22 +15,31 @@ import java.util.List;
 import java.util.UUID;
 
 public class CrimeLab {
-    private static CrimeLab sCrimeLab;
-
+    /**
+     * context使用注解;
+     * 使用Context的主要原因是出于对生命周期的考虑。
+     * 这里使用getApplicationContext(应用程序上下文)，
+     * 而不是使用getActivity（界面上下文）是因为Application的生命周期比任何activity都长
+     * 只有activity对象存在肯定就有Application对象存在。
+     * 根据对象的周期选择不同的上下文对象（context）
+     *
+     * CrimeLab是个单例（实例存储在内存中）。这表明，一旦创建，它就会一直存在，直至整个应用进程被销毁。
+     * 如果使用getActivity的上下文，势必会造成内存资源的浪费
+     */
     private Context mContext;
+    private static CrimeLab sCrimeLab;
     private SQLiteDatabase mDatabase;
+
+    private CrimeLab(Context context) {
+        mContext = context.getApplicationContext(); // ……见context注解
+        mDatabase = new CrimeBaseHelper(mContext).getWritableDatabase();
+    }
 
     public static CrimeLab get(Context context) {
         if (sCrimeLab == null) {
             sCrimeLab = new CrimeLab(context);
         }
         return sCrimeLab;
-    }
-
-    private CrimeLab(Context context) {
-        mContext = context.getApplicationContext();
-        mDatabase = new CrimeBaseHelper(mContext)
-                .getWritableDatabase();
     }
 
     private static ContentValues getContentValues(Crime crime) {

@@ -1,6 +1,16 @@
 package com.bignerdranch.android.criminalintent.database;
 
+/**
+ * 定义数据库的Schema（概要）
+ * 结构如下：（使用内部类构造结构）
+ * 数据库--
+ *   表--
+ *     表名--
+ *     列--
+ *
+ */
 public class CrimeDbSchema {
+
     public static final class CrimeTable {
         public static final String NAME = "crimes";
 

@@ -10,7 +10,11 @@ import java.util.UUID;
 
 import com.bignerdranch.android.criminalintent.database.CrimeDbSchema.CrimeTable;
 
+/**
+ * 将所有调用委托给实际的游标对象
+ */
 public class CrimeCursorWrapper extends CursorWrapper {
+
     public CrimeCursorWrapper(Cursor cursor) {
         super(cursor);
     }

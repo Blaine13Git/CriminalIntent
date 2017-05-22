@@ -64,7 +64,7 @@ public class DatePickerFragment extends DialogFragment {
                                 Date date = new GregorianCalendar(year, month, day).getTime();
                                 sendResult(Activity.RESULT_OK, date);
                             }
-                })
+                        })
                 .create();
     }
 
