@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import static com.bignerdranch.android.criminalintent.database.CrimeDbSchema.CrimeTable.Cols.DATE;
 import static com.bignerdranch.android.criminalintent.database.CrimeDbSchema.CrimeTable.Cols.SOLVED;
+import static com.bignerdranch.android.criminalintent.database.CrimeDbSchema.CrimeTable.Cols.SUSPECT;
 import static com.bignerdranch.android.criminalintent.database.CrimeDbSchema.CrimeTable.Cols.TITLE;
 import static com.bignerdranch.android.criminalintent.database.CrimeDbSchema.CrimeTable.Cols.UUID;
 import static com.bignerdranch.android.criminalintent.database.CrimeDbSchema.CrimeTable.NAME;
@@ -32,12 +33,14 @@ public class CrimeBaseHelper extends SQLiteOpenHelper {
                 UUID + ", " +
                 TITLE + ", " +
                 DATE + ", " +
-                SOLVED +
+                SOLVED + "," +
+                SUSPECT +
                 ")"
         );
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
     }
 }
